@@ -41,9 +41,14 @@ function Person({ person }) {
       <div className="space-y-1">
         <h4 className="font-medium">Hobbies</h4>
         <ul className="flex flex-wrap gap-2 text-sm text-secondary-800">
-          <li className="bg-secondary-100 px-2 py-0.5 rounded-full">Hobby 1</li>
-          <li className="bg-secondary-100 px-2 py-0.5 rounded-full">Hobby 2</li>
-          <li className="bg-secondary-100 px-2 py-0.5 rounded-full">Hobby 3</li>
+          {person.hobbies.map((hobby, index) => (
+            <li
+              className="bg-secondary-100 px-2 py-0.5 rounded-full"
+              key={hobby}
+            >
+              {hobby}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="space-y-1">

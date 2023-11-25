@@ -1,10 +1,12 @@
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import './globals.css';
 import { Inter } from 'next/font/google';
 
 
 const inter = Inter({ subsets: ['latin'] });
-
+// can also do import { Comic_Neue, Inter, Montserrat, Roboto } from 'next/font/google';
+// const inter = Comic_Neue({ subsets: ['latin], weight: ["700"] })
 
 export const metadata = {
   title: 'My Website',
@@ -17,6 +19,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

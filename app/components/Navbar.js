@@ -1,6 +1,10 @@
+"use client";
 import Link from "next/link"; // next js specific component for internal links - should still use <a> for external links
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  if (pathname != "/studio") {
   return (
     <nav className="border-b sticky top-0 bg-primary-900 text-primary-100 border-primary-800 z-10">
       <div className="h-14 max-w-7xl p-4 mx-auto flex items-center justify-between">
@@ -18,4 +22,5 @@ export default function Navbar() {
       </div>
     </nav>
   );
+  }
 }

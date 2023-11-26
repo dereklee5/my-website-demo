@@ -9,6 +9,8 @@ import {deskTool} from 'sanity/desk'
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schema'
+import { media } from "sanity-plugin-media";
+
 
 export default defineConfig({
   basePath: '/studio',

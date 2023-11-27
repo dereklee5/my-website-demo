@@ -2,6 +2,9 @@ import BlogPostHeader from "./components/BlogPostHeader";
 import { client } from "@/sanity/lib/client";
 import { notFound} from "next/navigation";
 import { PortableText} from "@portabletext/react";
+import { urlForImage } from "@/sanity/lib/image";
+import { tryGetImageDimensions } from "@sanity/asset-utils";
+
 
 export default async function BlogPost({ params }) {
     const post = await getBlogPost(params.post);
@@ -11,8 +14,8 @@ export default async function BlogPost({ params }) {
             <div className="mx-auto max-w-5xl space-y-8 py-8">
                 <BlogPostHeader post={post} />
                 <hr className="border-primary-200" />
-                <article>
-                    <PortableText value={post.content} components={[]} />
+                <article className="prose md:prose-md prose-primary mx-auto">
+                    <PortableText value={post.content} components={portableTextComponents} />
                 </article>
             </div>
         </div>
@@ -36,3 +39,27 @@ async function getBlogPost(slug) {
         return post;
       }
 }
+
+const portableTextComponents = {
+    types: {
+      image: ImageComponent,
+    },
+  };
+  
+  function ImageComponent({ value }) {
+    const { width, height } = tryGetImageDimensions(value);
+  
+    return (
+      <Image
+        src={urlForImage(value).fit("max").auto("format").url()}
+        width={width}
+        height={height}
+        loading="lazy"
+        className="mx-auto md:max-w-prose rounded-lg"
+        style={{
+          aspectRatio: width / height,
+        }}
+      />
+    );
+  }
+

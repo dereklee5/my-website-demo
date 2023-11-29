@@ -24,7 +24,7 @@ export default async function Photos() {
 function DogCard({ dog }) {
     return (
       <li className="border md:hover:scale-95 transition-transform border-primary-200 bg-gradient-to-bl from-secondary-100 to-white via-white rounded-xl p-4 flex items-start justify-start space-x-4">
-        <img
+        <Image
           src={dog.pic}
           alt={dog.name}
           className="w-40 h-40 rounded-lg border object-cover border-primary-200"

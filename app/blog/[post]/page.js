@@ -55,6 +55,7 @@ function ImageComponent({ value }) {
       width={width}
       height={height}
       loading="lazy"
+      alt="Demi Lovato"
       className="mx-auto md:max-w-prose rounded-lg"
       style={{
         aspectRatio: width / height,

@@ -29,7 +29,7 @@ async function getBlogPost(slug) {
         date,
         "slug":slug.current,
         image,
-        content
+        "content": coalesce(content, [])
       }`;
     
       const post = await client.fetch(query, { thisIsMySlug: slug });
@@ -41,25 +41,25 @@ async function getBlogPost(slug) {
 }
 
 const portableTextComponents = {
-    types: {
-      image: ImageComponent,
-    },
-  };
-  
-  function ImageComponent({ value }) {
-    const { width, height } = tryGetImageDimensions(value);
-  
-    return (
-      <Image
-        src={urlForImage(value).fit("max").auto("format").url()}
-        width={width}
-        height={height}
-        loading="lazy"
-        className="mx-auto md:max-w-prose rounded-lg"
-        style={{
-          aspectRatio: width / height,
-        }}
-      />
-    );
-  }
+  types: {
+    image: ImageComponent,
+  },
+};
+
+function ImageComponent({ value }) {
+  const { width, height } = tryGetImageDimensions(value);
+
+  return (
+    <Image
+      src={urlForImage(value).fit("max").auto("format").url()}
+      width={width}
+      height={height}
+      loading="lazy"
+      className="mx-auto md:max-w-prose rounded-lg"
+      style={{
+        aspectRatio: width / height,
+      }}
+    />
+  );
+}
 

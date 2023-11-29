@@ -1,7 +1,7 @@
 const person = { // const is data we don't want changed
-  name: "John Doe",
+  name: "Demetria Devonne Lovato",
   age: 30,
-  hobbies: ["reading", "hiking", "coding"],
+  hobbies: ["Singing", "Dancing", "Yelling"],
   address: {
     street: "123 Main St",
     city: "New York",
@@ -9,10 +9,10 @@ const person = { // const is data we don't want changed
     zip: "10001",
   },
   contact: {
-    email: "john@email.com",
+    email: "demilovato@email.com",
     phone: "123-456-7890",
   },
-  isMarried: true
+  isMarried: false
 };
 
 export default function Home() {

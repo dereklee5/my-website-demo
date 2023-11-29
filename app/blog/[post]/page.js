@@ -4,6 +4,7 @@ import { notFound} from "next/navigation";
 import { PortableText} from "@portabletext/react";
 import { urlForImage } from "@/sanity/lib/image";
 import { tryGetImageDimensions } from "@sanity/asset-utils";
+import Image from 'next/image';
 
 
 export default async function BlogPost({ params }) {

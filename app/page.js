@@ -19,7 +19,7 @@ const person = { // const is data we don't want changed
 };
 
 const otherPerson = { // const is data we don't want changed
-  name: "Poot Lovato",
+  name: "Pemetria Pevonne Lovato",
   age: 31,
   hobbies: ["Singing", "Belting", "Yelling"],
   address: {
@@ -62,7 +62,7 @@ export default function Home() {
         </div>
       
       </div>
-    <div className="p-16">
+    <div className="p-16 flex space-x-8">
         <Person person={person} />
         <Person person={otherPerson} />
       </div>

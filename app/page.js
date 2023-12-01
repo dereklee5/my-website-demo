@@ -22,12 +22,13 @@ export default function Home() {
 
   return (
     <>
-    <div className='flex flex-col py-8 md:flex-row w-full justify-evenly bg-primary-500'>
-      <div className='flex flex-col p-8 justify-end gap-2'>
-        <p>Welcome to my website!</p>
-        <p className='text-5xl'>Hi, I&apos;m Demi Lovato</p>
-        <p>
-          This is my website! You'll be able to find my blog posts and dog adoption services here.
+    <div className='flex flex-col md:flex-row w-full justify-evenly bg-primary-700'>
+      <div className='flex flex-col p-8 justify-center gap-2'>
+        <p className='text-lg font-semibold text-primary-100 mb-2'>Welcome to my website!</p>
+        <p className='text-5xl font-bold text-primary-100 mb-4'>Hi, I&apos;m Demi Lovato.</p>
+        <p className='font-medium text-primary-200 mb-2'>
+          This is my website! You'll be able to find my blog posts and dog adoption services here. <br />
+           Please don't mention my music.
         </p>
         <div className='flex gap-3 my-2'>
             <FilledButton><a href='/blog'>Read my blog</a></FilledButton>
@@ -38,8 +39,8 @@ export default function Home() {
             <Image
               className='rounded-2xl'
               src='https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_28/1748161/demi-lovato-te-square-210713.jpg'
-              width='400'
-              height='400'
+              width='350'
+              height='350'
             />
         </div>
       

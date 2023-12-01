@@ -49,7 +49,7 @@ export default function Home() {
         </p>
         <div className='flex gap-3 my-2'>
             <FilledButton><a href='/blog'>Read my blog</a></FilledButton>
-            <OutlinedButton><a href='/projects'>Check out my projects</a></OutlinedButton>
+            <OutlinedButton><a href='/photos'>Check out my dogs</a></OutlinedButton>
         </div>
         </div>
         <div className='p-8'>

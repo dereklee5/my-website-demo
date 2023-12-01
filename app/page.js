@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const person = { // const is data we don't want changed
   name: "Demetria Devonne Lovato",
-  age: 30,
-  hobbies: ["Singing", "Dancing", "Yelling"],
+  age: 31,
+  hobbies: ["Singing", "Dancing", "Writing"],
   address: {
     street: "123 Main St",
     city: "New York",
@@ -14,6 +14,23 @@ const person = { // const is data we don't want changed
   contact: {
     email: "demilovato@email.com",
     phone: "123-456-7890",
+  },
+  isMarried: false
+};
+
+const otherPerson = { // const is data we don't want changed
+  name: "Poot Lovato",
+  age: 31,
+  hobbies: ["Singing", "Belting", "Yelling"],
+  address: {
+    street: "123 Main St",
+    city: "New York",
+    state: "NY",
+    zip: "10001",
+  },
+  contact: {
+    email: "pootlovato@email.com",
+    phone: "098-765-4321",
   },
   isMarried: false
 };
@@ -47,6 +64,7 @@ export default function Home() {
       </div>
     <div className="p-16">
         <Person person={person} />
+        <Person person={otherPerson} />
       </div>
     </>
 

@@ -1,3 +1,6 @@
+import { FilledButton, OutlinedButton } from "./components/Buttons";
+import Image from 'next/image';
+
 const person = { // const is data we don't want changed
   name: "Demetria Devonne Lovato",
   age: 30,
@@ -18,9 +21,33 @@ const person = { // const is data we don't want changed
 export default function Home() {
 
   return (
+    <>
+    <div className='flex flex-col py-8 md:flex-row w-full justify-evenly bg-primary-500'>
+      <div className='flex flex-col p-8 justify-end gap-2'>
+        <p>Welcome to my website!</p>
+        <p className='text-5xl'>Hi, I&apos;m Demi Lovato</p>
+        <p>
+          This is my website! You'll be able to find my blog posts and dog adoption services here.
+        </p>
+        <div className='flex gap-3 my-2'>
+            <FilledButton><a href='/blog'>Read my blog</a></FilledButton>
+            <OutlinedButton><a href='/projects'>Check out my projects</a></OutlinedButton>
+        </div>
+        </div>
+        <div className='p-8'>
+            <Image
+              className='rounded-2xl'
+              src='https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_28/1748161/demi-lovato-te-square-210713.jpg'
+              width='400'
+              height='400'
+            />
+        </div>
+      
+      </div>
     <div className="p-16">
-      <Person person={person}/>
-    </div>
+        <Person person={person} />
+      </div>
+    </>
 
   );
 }
